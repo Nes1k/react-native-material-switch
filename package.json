@@ -1,6 +1,6 @@
 {
   "name": "react-native-material-switch-finale",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Customizable material style switch",
   "main": "index.js",
   "scripts": {
@@ -37,5 +37,8 @@
   "homepage": "https://github.com/Nes1k/react-native-material-switch",
   "peerDependencies": {
     "react-native": ">= 0.19.0"
+  },
+  "dependencies": {
+    "react": "^15.4.0"
   }
 }

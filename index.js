@@ -1,4 +1,4 @@
-import import React, { Component, PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react'
 import {
   PanResponder,
   View,
@@ -6,7 +6,7 @@ import {
   Animated,
 } from 'react-native'
 
-export default class MaterialSwitch extends Component{
+export default class MaterialSwitch extends Component {
 
   static defaultProps = {
     padding: 10,
@@ -50,9 +50,9 @@ export default class MaterialSwitch extends Component{
     this.start = {}
 
     const { switchWidth, switchHeight, buttonRadius, value } = props
-    const w = switchWidth - Math.min(switchHeight, buttonRadius*2);
+    const w = switchWidth - Math.min(switchHeight, buttonRadius*2)
 
-    this.state =  {
+    this.state = {
       width: w,
       position: new Animated.Value(value ? w : 0),
     }
@@ -166,14 +166,14 @@ export default class MaterialSwitch extends Component{
   }
 
   isPropsChangedAfter = () => {
-    if(this._timer){
+    if (this._timer){
       clearTimeout(this._timer)
     }
     this._timer = setTimeout(() => {
-      if(this.props.value && this.state.position._value !== this.state.width){
+      if (this.props.value && this.state.position._value !== this.state.width){
         this.activateAnimate()
       }
-      if(!this.props.value && this.state.position._value !== 0){
+      if (!this.props.value && this.state.position._value !== 0){
         this.deactivateAnimate()
       }
     }, this.props.switchAnimationTime + 50)
@@ -190,21 +190,21 @@ export default class MaterialSwitch extends Component{
   }
 
   changeState = (state) => {
-    var callHandlers = this.start.state != state;
+    var callHandlers = this.start.state != state
     setTimeout(() => {
       if (callHandlers) {
-        this.props.onValueChange(state);
+        this.props.onValueChange(state)
       }
-    }, this.props.switchAnimationTime/2);
+    }, this.props.switchAnimationTime/2)
   }
 
   toggle = () => {
     if (!this.props.enableSlide) return;
 
     if (this.props.value) {
-      this.deactivate();
+      this.deactivate()
     } else {
-      this.activate();
+      this.activate()
     }
   }
 
